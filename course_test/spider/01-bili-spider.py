@@ -6,7 +6,7 @@
 
 from bs4 import BeautifulSoup     #网页解析，获取数据
 import re       #正则表达式，进行文字匹配
-import urllib.request,urllib.error      #制定URL，获取网页数据
+import urllib.request,urllib.error      #制定URL，获取网页数据  之前是有urllib和urllib2的，但是phtyon3之后把这两种使用的都整合到urllib下了，所以只导入urllib即可
 import xlwt     #进行excel操作
 import sqlite3  #进行SQLite数据库操作
 
@@ -24,7 +24,7 @@ def main():
 
     #askURL("https://movie.douban.com/top250?start=")
 
-#影片详情链接的规则
+#影片详情链接的规则 在字符串前面写个r，代表着就不用转义了
 findLink = re.compile(r'<a href="(.*?)">')     #创建正则表达式对象，表示规则（字符串的模式）
 #影片图片
 findImgSrc = re.compile(r'<img.*src="(.*?)"',re.S)   #re.S 让换行符包含在字符中
@@ -38,9 +38,6 @@ findJudge = re.compile(r'<span>(\d*)人评价</span>')
 findInq = re.compile(r'<span class="inq">(.*)</span>')
 #找到影片的相关内容
 findBd = re.compile(r'<p class="">(.*?)</p>',re.S)
-
-
-
 #爬取网页
 def getData(baseurl):
     datalist = []
@@ -93,9 +90,6 @@ def getData(baseurl):
             datalist.append(data)       #把处理好的一部电影信息放入datalist
 
     return datalist
-
-
-
 #得到指定一个URL的网页内容
 def askURL(url):
     head = {                #模拟浏览器头部信息，向豆瓣服务器发送消息
@@ -115,10 +109,6 @@ def askURL(url):
         if hasattr(e,"reason"):
             print(e.reason)
     return html
-
-
-
-
 #保存数据
 def saveData(datalist,savepath):
     print("save....")
@@ -134,8 +124,6 @@ def saveData(datalist,savepath):
             sheet.write(i+1,j,data[j])      #数据
 
     book.save(savepath)       #保存
-
-
 def saveData2DB(datalist,dbpath):
     init_db(dbpath)
     conn = sqlite3.connect(dbpath)
@@ -155,13 +143,6 @@ def saveData2DB(datalist,dbpath):
         conn.commit()
     cur.close()
     conn.close()
-
-
-
-
-
-
-
 def init_db(dbpath):
     sql = '''
         create table movie250 
@@ -183,8 +164,6 @@ def init_db(dbpath):
     cursor.execute(sql)
     conn.commit()
     conn.close()
-
-
 
 if __name__ == "__main__":          #当程序执行时
 #调用函数
