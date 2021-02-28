@@ -45,6 +45,7 @@ print("other: ",other) # other:  2020-11-29
 ##获取今天零点的时间
 today_zero_time = datetime.datetime.strftime(today, '%Y-%m-%d %H:%M:%S')
 print(today_zero_time) # 2020-12-06 00:00:00
+print("time.strftime:"+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(1463795435)))
 #获取上个月最后一天
 last_month_last_day = datetime.date(datetime.date.today().year,datetime.date.today().month,1)-datetime.timedelta(1) # 2020-11-30
 print(last_month_last_day)
@@ -52,4 +53,13 @@ print(last_month_last_day)
 expire_time = "2016-05-21 09:50:35"
 d = datetime.datetime.strptime(expire_time,"%Y-%m-%d %H:%M:%S")
 time_sec_float = time.mktime(d.timetuple())
-print(time_sec_float) # 1463795435.0  注意得到的是毫秒值
+print(time_sec_float) # 1463795435.0  注意得到的是秒值!
+
+# time的使用
+hour = "9"
+finish_ts=1606782400.0
+time_tup = time.strptime("2020" + "-" + "12" + "-" + "01" + " " + hour, "%Y-%m-%d %H")
+standard_ts = time.mktime(time_tup)
+print(standard_ts)
+late_mins = (finish_ts - standard_ts) / 60 #if finish_ts > standard_ts else 0
+print(late_mins)

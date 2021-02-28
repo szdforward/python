@@ -1,4 +1,5 @@
 import requests
+# 如果导入requests报错的话，可以安装包：python -m pip install requests
 from bs4 import BeautifulSoup
 
 # 一个简单的爬虫

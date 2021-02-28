@@ -11,4 +11,6 @@ def monitor_process(key_word, cmd):
     sys.stderr.write('process[%s] is lost, run [%s]\n' % (key_word,cmd))
     subprocess.call(cmd, shell=True)
 
+# szd分析
+# 这个脚本是分析subprocess的使用的，主要的目的是判断test.sh这个任务是否还在运行，如果不在运行了，就启动他，如果还在运行中，就返回空
 monitor_process("test.sh","/home/hadoop/test.sh")

@@ -4,7 +4,7 @@ x=-1.2
 y=2.2
 print(abs(x))
 print(math.ceil(x))
-print(cmp(x,y),cmp(y,x))
+# print(cmp(x,y),cmp(y,x))
 print(math.exp(1))
 print(math.fabs(-10))
 print(math.floor(-10.1))
