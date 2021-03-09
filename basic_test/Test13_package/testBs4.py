@@ -16,13 +16,13 @@ BeautifulSoup4将复杂HTML文档转换成一个复杂的树形结构,每个节�
 
 from bs4 import BeautifulSoup
 
-file = open("./baidu.html","rb")
+file = open("./baidu.html","rb")#read bytes 读取字节
 html = file.read().decode("utf-8")
-bs = BeautifulSoup(html,"html.parser")
+bs = BeautifulSoup(html,"html.parser")#使用html.parser来解析html网页
 
-#print(bs.title)
-#print(bs.a)
-#print(bs.head)
+# print(bs.title)
+# print(bs.a)#<a class="mnav" href="http://news.baidu.com" name="tj_trnews"><!--新闻--></a>  这个只会拿到第一个超链接
+# print(bs.head)
 
 #print(type(bs.head))
 
@@ -126,9 +126,9 @@ import re
 
 # t_list = bs.select("head > title")  #通过子标签来查找
 
-t_list = bs.select(".mnav ~ .bri")
-
-print(t_list[0].get_text())
+# t_list = bs.select(".mnav ~ .bri")
+#
+# print(t_list[0].get_text())
 
 # for item in t_list:
 #     print(item)

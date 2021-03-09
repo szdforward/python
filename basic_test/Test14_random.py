@@ -9,7 +9,8 @@ print( random.uniform(1.1,5.4) )     # 产生  1.1 到 5.4 之间的随机浮点
 print( random.choice('tomorrow') )   # 从序列中随机选取一个元素
 print( random.randrange(1,100,2) )   # 生成从1到100的间隔为2的随机整数
 
-a=[1,3,5,6,7]                # 将序列a中的元素顺序打乱
+# 将序列a中的元素顺序打乱
+a=[1,3,5,6,7]
 random.shuffle(a)
 print(a)
 
@@ -29,8 +30,10 @@ print(random.randrange(0, 101, 2))
 print(random.random())
 print(random.uniform(1, 10))
 
-# 随机字符：
+# 随机取一个字符：
 print(random.choice('abcdefghijklmnopqrstuvwxyz!@#$%^&*()'))
+# 随机取数
+print("随机取数",random.choice(range(100)))
 
 # 多个字符中生成指定数量的随机字符：
 print(random.sample('zyxwvutsrqponmlkjihgfedcba',5))

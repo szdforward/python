@@ -105,7 +105,7 @@ def askURL(url):
         #print(html)
     except urllib.error.URLError as e:
         if hasattr(e,"code"):
-            print(e.code)
+            print(e.code)#在这里URLError的code成员被挪到HTTPErro里面了 e.code可能会报错
         if hasattr(e,"reason"):
             print(e.reason)
     return html

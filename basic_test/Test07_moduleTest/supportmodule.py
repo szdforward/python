@@ -1,13 +1,13 @@
 # coding=utf-8
 
 #导入模块
-import course_test.Test07_moduleTest.support
+import basic_test.Test07_moduleTest.support
 # 使用导入的模块中的函数
-course_test.Test07_moduleTest.support.print_func("Zara")
+basic_test.Test07_moduleTest.support.print_func("Zara")
 
 #------------------------------------------------
 #或者
-from course_test.Test07_moduleTest.support import print_func
+from basic_test.Test07_moduleTest.support import print_func
 
 print_func("Zara")
 
