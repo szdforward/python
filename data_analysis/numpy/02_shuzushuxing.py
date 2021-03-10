@@ -16,6 +16,22 @@ import numpy as np
 # # 秩 就是轴的数量
 # # 比较重要的属性有：
 # print(a.ndim)#2 秩
+a = np.arange(24)
+print (a.ndim)             # 1  a 现只有一个维度
+# 现在调整其大小
+b = a.reshape(2,4,3)  # b 现在拥有三个维度
+print (b.ndim) #  3
+print(b)
+# [[[ 0  1  2]
+#   [ 3  4  5]
+#   [ 6  7  8]
+#   [ 9 10 11]]
+#
+#  [[12 13 14]
+#   [15 16 17]
+#   [18 19 20]
+#   [21 22 23]]]
+
 # print(a.size)#10 数组元素的总个数 相当于n*m
 # print(a.dtype)# <U11   U代表：Unicode
 
