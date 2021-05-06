@@ -9,7 +9,7 @@ localtime = time.localtime(time.time())
 # time.mktime()函数可以将time类型的变量转化为时间戳 含义为距离1970年1月1日已经过去了多少秒
 # print(int(time.mktime(localtime)/(24*60*60)))#2021年3月6日21:54:39 距离1970年已经过去了18692天
 
-print(time.asctime(time.localtime(time.time())))#Sun Mar  7 12:26:05 2021
+# print(time.asctime(time.localtime(time.time())))#Sun Mar  7 12:26:05 2021
 # #
 # #获取格式化的时间
 # #可以根据需求选取各种格式，但是最简单的获取可读的时间模式的函数是asctime():
@@ -17,6 +17,7 @@ print(time.asctime(time.localtime(time.time())))#Sun Mar  7 12:26:05 2021
 # print(time.asctime()) # Sun Dec  6 13:03:24 2020
 # #首选：
 # print(time.strftime('%Y-%m-%d %H:%M:%S')) # 2020-12-06 13:01:06
+# print('{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime(2010, 7, 4, 12, 15, 58))) #2010-07-04 12:15:58
 # #其次：
 # print(datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d %H:%M:%S')) # 2020-12-06 13:01:06
 # #最后：

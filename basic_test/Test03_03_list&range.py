@@ -138,3 +138,8 @@ for i in range(10,-5,-1):
     print(i,end="%")#10%9%8%7%6%5%4%3%2%1%0%-1%-2%-3%-4%
 for i in range(10,0,-1):#szd-感觉最后的这个数 步长 其实就可以理解为减1，-2的话就代表减2  默认是1即加1
     print(i,end=",")#10,9,8,7,6,5,4,3,2,1,
+
+
+# 使用list[0]=xxx 时需要注意的事项：如果list是一个空的，没有一个元素，进行list[0]就会出现错误：
+# list assignment index out of range：列表超过限制
+# 解决办法为：应该使用iplist.insert(i, ip) 或者iplist.append()

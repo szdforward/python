@@ -5,12 +5,6 @@ https://www.runoob.com/python3/python3-string.html 可以看下这个，格式�
 """
 
 str = 'HellooWorld!'    #字符串在python中本质上是一个字符序列Seq
-# print(str.lstrip("He"))#llooWorld!  删除字符串最左侧的字符  注意，这并不会改变该字符串，本身字符串就是不变的
-# print(str.rstrip("!"))# HellooWorld  删除字符串最右侧的字符
-# print(str.__len__())#12 这个应该是占内存大小
-# print(len(str))#12 字符串的长度
-# print(str.count("o"))#3 字符o在字符串中出现了3次
-# print(str.count("o",1,5))#1 字符o在下标1到下标4（含首不含尾，下标5不包含）之间出现了1次
 # print(str)        # 打印整个字符串
 # print(str[0])      # 打印字符串第一个字母 H
 # print(str[2:5])     # 打印第3到第5个字母,含首不含尾!!! llo
@@ -26,6 +20,18 @@ str = 'HellooWorld!'    #字符串在python中本质上是一个字符序列Seq
 # print ("我叫 %s 今年 %d 岁!" % ('小明', 10.856)) #我叫 小明 今年 10 岁!
 # print('H' in "Hello") # True 成员运算符 H是否包含在Hello 字符串中
 # print(3 in "123")  # 执行的话，会报错：TypeError: 'in <string>' requires string as left operand, not int  后面是字符串，但是你用int类型的来判断，就报错了
+
+#===============字符串函数
+str = 'HellooWorld!'    #字符串在python中本质上是一个字符序列Seq
+# print(str.lstrip("He"))#llooWorld!  删除字符串最左侧的字符  注意，这并不会改变该字符串，本身字符串就是不变的
+# print(str.rstrip("!"))# HellooWorld  删除字符串最右侧的字符
+# print(str.__len__())#12 这个应该是占内存大小
+# print(len(str))#12 字符串的长度
+# print(str.count("o"))#3 字符o在字符串中出现了3次
+# print(str.count("o",1,5))#1 字符o在下标1到下标4（含首不含尾，下标5不包含）之间出现了1次
+# rfind方法： str.rfind(str, beg=0 end=len(string)) str 要查找的字符串  beg 开始查找的位置  end 结束查找的位置 默认为字符串的长度
+# print(str.rfind("or"))#7 返回字符串最后一次出现的位置，如果没有匹配项则返回 -1
+
 
 #使用格式化符号进行进制转换  多加入了一个#号，目的是在转换结果头部显示当前进制类型，如不需要，可将#号去除
 num=10

@@ -57,5 +57,12 @@ f=dict([(1,2),(3,4),('a',100)])
 # print(bool(""))#False
 # print(bool("dsf"))#True
 
+#将list转换为tuple：
+temp_list = [1,2,3,4,5]
+print(tuple(temp_list),type(tuple(temp_list)),type(temp_list))
+#将tuple转换为list:
+temp_tuple = (1,2,3)
+print(list(temp_tuple),type(list(temp_tuple)),type(temp_tuple))
+
 
 

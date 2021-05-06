@@ -16,3 +16,5 @@ while b<100:
 # seq关键字的使用
 # print(a,b,c,sep="%") #89%144%3
 
+list1=[1,2,3,4]
+print(list1,sep=':')#[1, 2, 3, 4]
